@@ -7,6 +7,9 @@ import androidx.appcompat.widget.Toolbar;  // Change import for Toolbar
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import android.content.Intent;
+import android.widget.Toast;
+
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -55,7 +58,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(new AddFragment());
         } else if (itemId == R.id.nav_about) {
             replaceFragment(new AboutFragment());
-        }
+        } else if (itemId == R.id.nav_logout) {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish(); // Optional: Finish the current activity to prevent going back to it using the back button
+            // Display a toast message
+            Toast.makeText(this, "Logout Successful", Toast.LENGTH_SHORT).show();
+    }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
