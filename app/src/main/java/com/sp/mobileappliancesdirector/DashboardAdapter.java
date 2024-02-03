@@ -1,11 +1,14 @@
 package com.sp.mobileappliancesdirector;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,12 +35,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DashboardAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         Appliances appliances = appliancesArrayList.get(position);
 
         holder.applianceType.setText(appliances.NAME);
         holder.applianceModel.setText(appliances.MODEL);
+        Log.d("Image URL", appliances.IMAGE_URL);
+        Picasso.with(context).load(appliances.IMAGE_URL).into(holder.applianceImage);
 
     }
 
