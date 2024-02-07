@@ -11,14 +11,16 @@
         android:id="@+id/esit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Please Enter Appliance Name" />
+        android:hint="Please Enter Appliance Name"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/esit_model"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/esit_text"
-        android:hint="Please Enter Appliance Model" />
+        android:hint="Please Enter Appliance Model"
+        android:minHeight="48dp" />
 
 
     <Button
