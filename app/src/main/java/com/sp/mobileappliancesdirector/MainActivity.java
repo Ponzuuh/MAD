@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             replaceFragment(new AddFragment());
         } else if (itemId == R.id.nav_about) {
             replaceFragment(new AboutFragment());
+        } else if (itemId == R.id.nav_calculator) {
+            replaceFragment(new CalculatorFragment());
         } else if (itemId == R.id.nav_logout) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);

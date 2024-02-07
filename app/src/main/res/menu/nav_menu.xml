@@ -26,6 +26,10 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/nav_about"
             android:title="About"/>
+        <item
+            android:id="@+id/nav_calculator"
+            android:icon="@drawable/calculator"
+            android:title="Calculator" />
 
     </group>
 

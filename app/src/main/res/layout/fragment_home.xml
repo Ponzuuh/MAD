@@ -28,7 +28,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginHorizontal="25dp"
         android:textColor="#FFFFFF" />
 
     <TextView
@@ -38,8 +38,8 @@
         android:text="We’re here for every power consumption move you make!"
         android:layout_below="@id/textViewTitle"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:textColor="#D3D3D3" />
 
     <Button
