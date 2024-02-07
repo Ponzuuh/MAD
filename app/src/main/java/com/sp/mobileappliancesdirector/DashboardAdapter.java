@@ -37,31 +37,39 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
-        Appliances appliances = appliancesArrayList.get(position);
-
-        holder.applianceType.setText(appliances.NAME);
-        holder.applianceModel.setText(appliances.MODEL);
-        Log.d("Image URL", appliances.IMAGE_URL);
-        Picasso.with(context).load(appliances.IMAGE_URL).into(holder.applianceImage);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, DetailsActivity.class);
-
-                intent.putExtra("APPLIANCE_TYPE", appliances.NAME);
-                intent.putExtra("APPLIANCE_MODEL", appliances.MODEL);
-                intent.putExtra("APPLIANCES_IMAGE_URL", appliances.IMAGE_URL);
-                Log.d("DashboardAdapter", "Appliance Type: " + appliances.NAME);
-                Log.d("DashboardAdapter", "Appliance Model: " + appliances.MODEL);
-                Log.d("DashboardAdapter", "Appliance Image URL: " + appliances.IMAGE_URL);
-
-                context.startActivity(intent);
+        Appliances appliances = appliancesArrayList.get(position); // Retrieve the Appliances object at the specified position
+        if (appliances != null) {
+            holder.applianceType.setText(appliances.NAME);
+            holder.applianceModel.setText(appliances.MODEL);
+            Log.d("Image URL", appliances.IMAGE_URL);
+            if (holder.applianceImage != null && context != null && appliances.IMAGE_URL != null) {
+                Picasso.with(context).load(appliances.IMAGE_URL).into(holder.applianceImage);
+            } else {
+                Log.e("DashboardAdapter", "One of the views or context is null");
             }
-        });
 
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, DetailsActivity.class);
+                    if (appliances.NAME != null && appliances.MODEL != null && appliances.IMAGE_URL != null) {
+                        intent.putExtra("APPLIANCE_TYPE", appliances.NAME);
+                        intent.putExtra("APPLIANCE_MODEL", appliances.MODEL);
+                        intent.putExtra("APPLIANCES_IMAGE_URL", appliances.IMAGE_URL);
+                        Log.d("DashboardAdapter", "Appliance Type: " + appliances.NAME);
+                        Log.d("DashboardAdapter", "Appliance Model: " + appliances.MODEL);
+                        Log.d("DashboardAdapter", "Appliance Image URL: " + appliances.IMAGE_URL);
+                        context.startActivity(intent);
+                    } else {
+                        Log.e("DashboardAdapter", "One of the appliance attributes is null");
+                    }
+                }
+            });
+        } else {
+            Log.e("DashboardAdapter", "Appliances object is null");
+        }
     }
+
 
     @Override
     public int getItemCount() {
