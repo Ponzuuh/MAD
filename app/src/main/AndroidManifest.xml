@@ -36,6 +36,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".GenerateQRCodeActivity">
+            <!-- Any additional configuration for the activity can be added here -->
+        </activity>
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
