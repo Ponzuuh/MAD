@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "438608395506",
+    "project_id": "signup-login-firebase-542a3",
+    "storage_bucket": "signup-login-firebase-542a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438608395506:android:304f9b735b9017d93fe46b",
+        "android_client_info": {
+          "package_name": "com.sp.mobileappliancesdirector"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOu87w-H00_4MgBJ_cOOtE29Zzj0trXGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
