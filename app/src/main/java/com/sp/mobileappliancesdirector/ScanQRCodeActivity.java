@@ -36,10 +36,10 @@ public class ScanQRCodeActivity extends AppCompatActivity {
         options.setBeepEnabled(true);
         options.setOrientationLocked(true);
         options.setCaptureActivity(CaptureAct.class);
-        QRLaucher.launch(options);
+        QRLauncher.launch(options);
     }
 
-    ActivityResultLauncher<ScanOptions> QRLaucher = registerForActivityResult(new ScanContract(), result-> {
+    ActivityResultLauncher<ScanOptions> QRLauncher = registerForActivityResult(new ScanContract(), result-> {
 
         if (result.getContents() !=null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(ScanQRCodeActivity.this);
