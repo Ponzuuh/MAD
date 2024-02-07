@@ -10,7 +10,15 @@
     <EditText
         android:id="@+id/esit_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Please Enter Appliance Name" />
+
+    <EditText
+        android:id="@+id/esit_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/esit_text"
+        android:hint="Please Enter Appliance Model" />
 
 
     <Button
@@ -18,10 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_below="@+id/esit_model"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="107dp"
         android:width="171dp"
-        android:fontFamily='@font/arbutus'
         android:text="Generate!" />
 
     <ImageView

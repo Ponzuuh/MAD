@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.content.Intent;
 import android.widget.Button;
-
 import androidx.fragment.app.Fragment;
 
 public class AddFragment extends Fragment {
@@ -20,11 +19,21 @@ public class AddFragment extends Fragment {
 
         // Handle button click
         Button generateQRButton = view.findViewById(R.id.idBtnGenerateQR);
+        Button scanQRButton = view.findViewById(R.id.idBtnScanQR);
         generateQRButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Navigate to GenerateQRCodeActivity
                 Intent intent = new Intent(requireContext(), GenerateQRCodeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        scanQRButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate to GenerateQRCodeActivity
+                Intent intent = new Intent(requireContext(), ScanQRCodeActivity.class);
                 startActivity(intent);
             }
         });
