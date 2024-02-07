@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#0F0E1B"
+    tools:context=".InfoFragment1">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="45dp"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:text="🏡 Smart Home Control: "
+                android:textAlignment="center"
+                android:textColor="#0F0E1B"
+                android:textSize="34dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:text="Effortlessly manage and monitor various devices and applications within your home. From lighting and thermostats to smart appliances, 'MAD' gives you the ability to control everything seamlessly."
+            android:textColor="#FFFFFF"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
