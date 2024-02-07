@@ -6,7 +6,7 @@ public class Appliances {
 
     public Appliances(){}
 
-    public Appliances(String MODEL, String NAME) {
+    public Appliances(String MODEL, String NAME, String IMAGE_URL) {
         this.MODEL = MODEL;
         this.NAME = NAME;
         this.IMAGE_URL = IMAGE_URL;

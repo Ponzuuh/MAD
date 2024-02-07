@@ -1,6 +1,7 @@
 package com.sp.mobileappliancesdirector;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,22 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
         holder.applianceModel.setText(appliances.MODEL);
         Log.d("Image URL", appliances.IMAGE_URL);
         Picasso.with(context).load(appliances.IMAGE_URL).into(holder.applianceImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+
+                intent.putExtra("APPLIANCE_TYPE", appliances.NAME);
+                intent.putExtra("APPLIANCE_MODEL", appliances.MODEL);
+                intent.putExtra("APPLIANCES_IMAGE_URL", appliances.IMAGE_URL);
+                Log.d("DashboardAdapter", "Appliance Type: " + appliances.NAME);
+                Log.d("DashboardAdapter", "Appliance Model: " + appliances.MODEL);
+                Log.d("DashboardAdapter", "Appliance Image URL: " + appliances.IMAGE_URL);
+
+                context.startActivity(intent);
+            }
+        });
 
     }
 
