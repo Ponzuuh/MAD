@@ -16,6 +16,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
+            android:title=""
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/toolbar"
